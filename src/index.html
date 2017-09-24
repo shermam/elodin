@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"
+      ng-app="elodin">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+		      content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible"
+		      content="ie=edge">
+		<base href="/">
+		<title>Elodin App</title>
+
+	</head>
+
+	<body>
+
+		<md-content class="main-content">
+			<div ng-controller="NavController as nav">
+				<md-toolbar md-whiteframe="4">
+					<div class="md-toolbar-tools">
+						<a ui-sref="home"
+						   class="nav-logo-link">
+							Elodin
+						</a>
+
+						<div flex
+						     layout="row"
+						     layout-align="space-around center"
+						     class="links"
+						     hide-sm
+						     hide-xs>
+							<a ui-sref="home">Home</a>
+						</div>
+						<div flex
+						     hide-gt-sm></div>
+						<md-button ng-click="nav.toggle()"
+						           class="material-icons"
+						           hide-gt-sm>
+							menu
+						</md-button>
+					</div>
+				</md-toolbar>
+
+				<md-sidenav md-whiteframe="4"
+				            md-component-id="right"
+				            class="md-sidenav-right">
+					<md-toolbar class="side-nav-bar">
+						<md-button ng-click="nav.toggle()"
+						           class="material-icons md-icon-button right-absolute">
+							close
+						</md-button>
+					</md-toolbar>
+					<md-content class="side-content">
+						<div class="side-links">
+							<a ng-click="nav.toggle()"
+							   ui-sref="home">Home</a>
+						</div>
+
+					</md-content>
+				</md-sidenav>
+			</div>
+			<ui-view class="main-view"></ui-view>
+
+			<div class="footer md-primary"
+			     layout="column"
+			     layout-gt-sm="row"
+			     layout-align="space-around center">
+
+				<div class="footer-links"
+				     layout="column"
+				     layout-align="space-around center"
+				     hide-xs
+				     hide-sm>
+					<a ui-sref="home">Home</a>
+				</div>
+
+			</div>
+
+		</md-content>
+
+		<script defer
+		        src="/__/firebase/4.3.0/firebase-app.js"></script>
+		<script defer
+		        src="/__/firebase/4.3.0/firebase-auth.js"></script>
+		<script defer
+		        src="/__/firebase/4.3.0/firebase-database.js"></script>
+		<script defer
+		        src="/__/firebase/4.3.0/firebase-messaging.js"></script>
+		<script defer
+		        src="/__/firebase/4.3.0/firebase-storage.js"></script>
+		<script defer
+		        src="/__/firebase/init.js"></script>
+		<!-- Link to the Libs Javascript file -->
+		<script defer
+		        src="js/lib.js"></script>
+
+		<!-- Link to the main Javascript file -->
+		<script defer
+		        src="js/main.js"></script>
+
+		<!-- inject:js -->
+		<!-- endinject -->
+
+		<!-- Link to the templates Javascript file -->
+		<script defer
+		        src="js/templates.js"></script>
+	</body>
+
+</html>
